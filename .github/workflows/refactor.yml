@@ -19,8 +19,8 @@ jobs:
     - name: setup git config
       run: |
         # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-        git config user.name "Upsonic Refactor Bot"
-        git config user.email "<info@upsonic.co>"      
+        git config user.name "Volair Refactor Bot"
+        git config user.email "<info@volair.co>"      
 
     - name: Run Refactor Script
       run: |

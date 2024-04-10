@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+{% load pwa %}
+
+{% load tags %}
+
+
+<div id="this_url" style="display: none;">https://{{request.get_host}}:7341{{request.get_full_path_info}}</div>
+
+
+{% if request.user.dark_mode %}
+<script>
+  if (localStorage.getItem("color-theme")) {
+        
+        document.documentElement.classList.remove("light");
+        localStorage.setItem("color-theme", "dark");
+      
+  
+      // if NOT set via local storage previously
+    } else {
+  
+        document.documentElement.classList.remove("light");
+        localStorage.setItem("color-theme", "dark");
+      
+    }
+  
+    </script>
+
+{% else %}
+<script>
+
+  if (localStorage.getItem("color-theme")) {
+        
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        
+   
+        // if NOT set via local storage previously
+      } else {
+    
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        
+      }
+  
+  
+  </script>
+{% endif %}
+
+
+<script>
+  // Auto switch based on system preferences
+  function applyTheme(theme) {
+    const currentTheme = localStorage.getItem("color-theme");
+    if (currentTheme !== theme) {
+      {% if not request.user.dark_mode %}
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("color-theme", "dark");        
+        window.location.href = "{% url 'settings_dark_mode' %}";
+      }
+      {% else %}
+      if (theme === "light") {
+        document.documentElement.classList.add("light");
+        localStorage.setItem("color-theme", "lightZ");          
+        window.location.href = "{% url 'settings_light_mode' %}";
+      }
+      {% endif %}
+    }
+  }
+
+  // Check system preference
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("color-theme");
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme(systemPrefersDark ? "dark" : "light");
+  }
+
+  // Listen for changes in system preferences
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    applyTheme(e.matches ? "dark" : "light");
+  });
+</script>
+
+
+
+{% if request.user.dark_mode %}
+<html lang="en" data-bs-theme="dark" style="color-scheme: dark;">
+{% else %}
+<html lang="en" data-bs-theme="light">
+{% endif %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page_title}} - Volair</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          document.body.style.visibility = "visible";
+      });
+  </script>
+  <style>
+      body {
+          visibility: hidden;
+      }
+  </style>
+
+<link href='/static/css/franken.css' rel='stylesheet' type='text/css'>
+<script src="/static/js/uikit.min.js"></script>
+<script src="/static/js/uikit-icons.min.js"></script>
+<script
+type="module"
+src="/static/js/wc.iife.js"
+></script>
+<script
+  type="module"
+  src="/static/js/lucide.iife.js"
+></script>
+
+
+
+
+    <link href='/static/css/gabarito.css' rel='stylesheet' type='text/css'>
+    <link href='/static/css/poppins.css' rel='stylesheet' type='text/css'>
+    <link href='/static/css/site.css' rel='stylesheet' type='text/css'>
+    <link href='/static/css/dark_mode.css' rel='stylesheet' type='text/css'>
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.4/dist/js/uikit-icons.min.js"></script>
+
+
+<script>
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (
+    localStorage.getItem("color-theme") === "dark" ||
+    (!("color-theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+</script>
+    {% if request.user.dark_mode %}
+    <link rel="stylesheet" href="/static/css/atom-one-dark.min.css">
+    {% else %}
+    <link rel="stylesheet" href="/static/css/atom-one-light.min.css">
+    {% endif %}    
+    
+    <script src="/static/js/highlight.min.js"></script>
+    
+    <!-- and it's easy to individually load additional languages -->
+    <script src="/static/js/python.min.js"></script>
+    <script src="/static/js/markdown.min.js"></script>
+    
+
+    {% include 'in_page_load.js.html' %}
+
+    {% sentry as sentry %}
+    {% sentry_dsn as sentry_dsn %}
+    {% if sentry %}
+
+    <!-- Recommended: Use this bundle for feedback, replay, error, and performance monitoring -->
+    <script
+      src="https://browser.sentry-cdn.com/7.102.1/bundle.tracing.replay.feedback.min.js"
+      integrity="sha384-26uTXIBpd3urK4WDZ68YL44GKxnla0zmZ8qlduExjd57i0bUcMZPL11G6tnCAEiH"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        Sentry.setUser({
+          fullName: "{{request.user.username}}",
+        });
+        Sentry.init({
+          dsn: "{{sentry_dsn}}",
+
+          integrations: [
+            Sentry.feedbackIntegration({
+              // Additional SDK configuration goes in here, for example:
+              colorScheme: "dark",
+              useSentryUser: {
+                email: "email",
+                name: "fullName",
+              },
+            }),
+            Sentry.replayIntegration(),
+          ],
+          replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
+          replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+        });
+
+
+    </script>
+
+    {% endif %}
+
+    
+
+    {% progressive_web_app_meta %}
+</head>
+
+<body class="bg-background light_mode_bg">
+
+  {% include 'header.html' %}
+  
+  <main id="the_content" >
+  
+    <div uk-grid class="bg-backgroundr">
+      {% include 'sidebar.html' %}
+  
+      {% if page_title == 'Search' %}
+      <script>
+      document.getElementById("header_search_div").style.display = "none";
+      </script>
+      {% else %}
+      <script>
+      document.getElementById("header_search_div").style.display = "block";
+      </script>      
+      {% endif %}
+  
+      {% block content %}{% endblock content %}
+    </div>
+  </main>
+  
+  <iframe style="display: none;" name="transFrame" id="transFrame"></iframe>
+  
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit-icons.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/site.js" id="script_tag"></script>
+  <script>
+  hljs.highlightAll();
+  </script>
+  
+  </body>
+  
+</html>

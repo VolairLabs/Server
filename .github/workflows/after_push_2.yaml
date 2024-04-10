@@ -141,10 +141,10 @@ jobs:
           cd ..
           if [ -d models ]; then rm -r models; fi
           mkdir models
-          docker buildx build --platform linux/amd64 -f Server/Dockerfile --push -t upsonic/on-prem:latest-AMD64 -t upsonic/on-prem:$VERSION-AMD64 \
+          docker buildx build --platform linux/amd64 -f Server/Dockerfile --push -t volair/on-prem:latest-AMD64 -t volair/on-prem:$VERSION-AMD64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
-          docker buildx build --platform linux/amd64 -f Server/Dockerfile.without_models --push -t upsonic/on-prem_without_models:latest-AMD64 -t upsonic/on-prem_without_models:$VERSION-AMD64 \
+          docker buildx build --platform linux/amd64 -f Server/Dockerfile.without_models --push -t volair/on-prem_without_models:latest-AMD64 -t volair/on-prem_without_models:$VERSION-AMD64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
 
@@ -204,10 +204,10 @@ jobs:
           cd ..
           if [ -d models ]; then rm -r models; fi
           mkdir models
-          docker buildx build --platform linux/arm64 -f Server/Dockerfile --push -t upsonic/on-prem:latest-ARM64 -t upsonic/on-prem:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f Server/Dockerfile --push -t volair/on-prem:latest-ARM64 -t volair/on-prem:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
-          docker buildx build --platform linux/arm64 -f Server/Dockerfile.without_models --push -t upsonic/on-prem_without_models:latest-ARM64 -t upsonic/on-prem_without_models:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f Server/Dockerfile.without_models --push -t volair/on-prem_without_models:latest-ARM64 -t volair/on-prem_without_models:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
 
@@ -223,7 +223,7 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          name: Upsonic ${{ needs.tagext.outputs.tag }}
+          name: Volair ${{ needs.tagext.outputs.tag }}
           generateReleaseNotes: true
           tag: ${{ needs.tagext.outputs.tag }}
 

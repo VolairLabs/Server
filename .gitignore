@@ -5,14 +5,14 @@ KOT-*/
 
 test.ipynb
 
-upsonic_on_prem/dash/staticfiles/*
+volair_on_prem/dash/staticfiles/*
 
-Upsonic-*/
-upsonic_cache/
+Volair-*/
+volair_cache/
 .vscode
 
 test_backup
-*.Upsonic
+*.Volair
 *.zip
 test_file.txt
 *.db

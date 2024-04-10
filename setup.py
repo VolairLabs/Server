@@ -10,7 +10,7 @@ import setuptools
 def find_packages():
     packages = []
     for package in setuptools.find_packages():
-        if package.startswith("upsonic_on_prem"):
+        if package.startswith("volair_on_prem"):
             packages.append(package)
     return packages
 
@@ -18,20 +18,20 @@ def find_packages():
 with open("requirements.txt") as fp:
     install_requires = fp.read()
 setup(
-    name="upsonic_on_prem",
+    name="volair_on_prem",
     version="0.34.3",
     description="""Magic Cloud Layer""",
     long_description="".join(open("README.md", encoding="utf-8").readlines()),
     long_description_content_type="text/markdown",
-    url="https://github.com/Upsonic/Server",
-    author="Upsonic",
-    author_email="onur.atakan.ulusoy@upsonic.co",
+    url="https://github.com/Volair/Server",
+    author="Volair",
+    author_email="onur.atakan.ulusoy@volair.co",
     license="MIT",
     packages=find_packages(),
     include_package_data=True,
     # install_requires=install_requires,
     entry_points={
-        "console_scripts": ["upsonic_on_prem=upsonic_on_prem.main:cli"],
+        "console_scripts": ["volair_on_prem=volair_on_prem.main:cli"],
     },
     python_requires=">= 3",
     zip_safe=False,

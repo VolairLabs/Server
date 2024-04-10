@@ -1,6 +1,6 @@
 FROM ubuntu
 
-LABEL org.opencontainers.image.source https://github.com/Upsonic/Server
+LABEL org.opencontainers.image.source https://github.com/Volair/Server
 
 RUN mkdir /app
 RUN mkdir /db
@@ -26,7 +26,7 @@ COPY Server/the.conf /etc/nginx/conf.d/the.conf
 
 COPY Server/run.sh /
 
-COPY models Server/upsonic_on_prem/api/utils/ai/
+COPY models Server/volair_on_prem/api/utils/ai/
 
 WORKDIR /app/Server
 

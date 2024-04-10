@@ -5,10 +5,10 @@ sudo pip3 install -r requirements.txt
 sudo mkdir /db
 sudo chown -R redis:redis /db
 
-cd upsonic_on_prem
+cd volair_on_prem
 cd dash
 python3 manage.py migrate --noinput
-echo "from app import models; models.User.objects.create_superuser('user', 'user@upsonic.co', '123', access_key='123')" | python3 manage.py shell
+echo "from app import models; models.User.objects.create_superuser('user', 'user@volairlabs.com', '123', access_key='123')" | python3 manage.py shell
 
 echo "
 admin_pass = 123

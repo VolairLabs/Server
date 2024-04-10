@@ -5,10 +5,10 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-from upsonic_on_prem.api.utils import storage, storage_2, storage_3
-from upsonic_on_prem.api.utils import AccessKey
-from upsonic_on_prem.api.utils import Scope
-from upsonic_on_prem.api.utils.credential_detection.main import detect_credentials
+from volair_on_prem.api.utils import storage, storage_2, storage_3
+from volair_on_prem.api.utils import AccessKey
+from volair_on_prem.api.utils import Scope
+from volair_on_prem.api.utils.credential_detection.main import detect_credentials
 
 import cloudpickle
 

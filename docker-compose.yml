@@ -5,7 +5,7 @@ services:
   on_prem:
     networks:
       - network
-    image: ghcr.io/upsonic/on-prem:latest
+    image: ghcr.io/volair/on-prem:latest
     volumes:
       - 'On_Prem_Volume:/db'
     env_file:

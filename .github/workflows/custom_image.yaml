@@ -88,7 +88,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/amd64 -f Server/Dockerfile --push -t upsonic/on-prem_test:$VERSION-AMD64 \
+          docker buildx build --platform linux/amd64 -f Server/Dockerfile --push -t volair/on-prem_test:$VERSION-AMD64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           
@@ -155,7 +155,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/arm64 -f Server/Dockerfile --push -t upsonic/on-prem_test:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f Server/Dockerfile --push -t volair/on-prem_test:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           
@@ -224,7 +224,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/amd64 -f Server/Dockerfile.without_models --push -t upsonic/on-prem_without_models_test:$VERSION-AMD64 \
+          docker buildx build --platform linux/amd64 -f Server/Dockerfile.without_models --push -t volair/on-prem_without_models_test:$VERSION-AMD64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           
@@ -292,7 +292,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/arm64 -f Server/Dockerfile.without_models --push -t upsonic/on-prem_without_models_test:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f Server/Dockerfile.without_models --push -t volair/on-prem_without_models_test:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           

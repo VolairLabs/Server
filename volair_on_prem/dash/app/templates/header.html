@@ -1,0 +1,75 @@
+{% load tags %}
+
+
+
+
+
+
+
+
+
+<nav class="uk-navbar-container light_mode_bg" uk-navbar >
+    <div class="uk-navbar-left uk-margin-small-left" style="width: 30%;">
+        <ul class="uk-navbar-nav uk-margin-small-left uk-margin-small-top uk-margin-small-bottom" style="width: 100%;">
+          <a id="logo_button" class="uk-navbar-item uk-logo" href="{% url 'home' %}"><img src="/static/images/logo_name{% if request.user.dark_mode %}_dark.svg{% else %}.svg{% endif %}" alt="Logo" style="width: 124px; max-width: unset;"
+              class="d-inline-block align-text-top align-middle"></a>
+        </ul>
+      </div>
+      <div class="uk-navbar-center" style="width: 60%;">
+        <ul class="uk-navbar-nav" style="width: 100%; display: flex; justify-content: center;">
+          <li id="header_search_div" style="width: 60%;">
+            <form action="{% url 'search' %}" method="post">
+              <div class="uk-margin-small-top">
+                <uk-glow
+        border-width="1px"
+        border-color="light: #e5e7eb; dark: #27272a"
+        background-color="light: #fff; dark: #09090b"
+        glow-width="2px"
+        glow-color="light: #4ade80; dark: #4ade80"
+        uk-cloak
+      >
+                <div class="uk-inline" style="width: 100%; position: relative;">
+                  <input id="search-input" class="uk-input" style="width: 100%; border-width: 0px;" type="text" aria-label="Search" name="question" autocomplete="off" required/>
+                  <span id="search-placeholder" style="position: absolute; left: 10px; top: 0; padding: 8px; pointer-events: none; font-size: smaller; color: gray;">
+                    AI Search <span id="shortcut-text" style="color: #01ee8a;">[⌘+K]</span>
+                  </span>
+                </div>
+                </uk-glow>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-margin-medium-right">
+          <a href="https://docs.volair.co/" target="_blank" class="uk-button uk-button-default"><span uk-icon="file-text" class="uk-margin-small-right"></span>Docs</a>
+          <a href="https://docs.volair.co/support" target="_blank" class="uk-button uk-button-default"><span uk-icon="receiver" class="uk-margin-small-right"></span>Support</a>
+        </ul>
+      </div>
+</nav>
+<script>
+  document.addEventListener('keydown', function(event) {
+      if (event.metaKey && event.key === 'k') {
+          event.preventDefault();
+          document.getElementById('search-input').focus();
+      }
+  });
+  
+  const searchInput = document.getElementById('search-input');
+  const searchPlaceholder = document.getElementById('search-placeholder');
+  const shortcutText = document.getElementById('shortcut-text');
+  
+  searchInput.addEventListener('input', function() {
+      if (searchInput.value) {
+          searchPlaceholder.style.display = 'none';
+      } else {
+          searchPlaceholder.style.display = 'block';
+      }
+  });
+
+  // Detect OS and update shortcut text
+  const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+  if (!isMac) {
+      shortcutText.style.display = 'none';
+  }
+</script>
