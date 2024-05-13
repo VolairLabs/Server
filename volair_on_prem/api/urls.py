@@ -1,4 +1,4 @@
-from volair_on_prem.api.endpoints import (
+from volair_on_PREM.api.endpoints import (
     user_urls_endpoints,
     scope_write_auth_endpoints,
     scope_read_auth_endpoints,

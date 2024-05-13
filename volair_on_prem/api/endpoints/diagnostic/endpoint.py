@@ -1,6 +1,6 @@
 # API Informations
-from volair_on_prem.api.endpoints.utils import get_current_directory_name
-from volair_on_prem.api.app import app
+from volair_on_PREM.api.endpoints.utils import get_current_directory_name
+from volair_on_PREM.api.app import app
 from flask import jsonify
 
 
@@ -13,7 +13,7 @@ method = "GET"
 #
 
 
-from volair_on_prem.api.utils.diagnostic.diagnostic import diagnostic
+from volair_on_PREM.api.utils.diagnostic.diagnostic import diagnostic
 
 
 def endpoint():

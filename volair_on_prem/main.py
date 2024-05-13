@@ -11,10 +11,10 @@ if __name__ == "__main__":
     sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 
-from volair_on_prem.api import app
+from volair_on_PREM.api import app
 
 
-from volair_on_prem.api.utils.configs import threads, url_scheme
+from volair_on_PREM.api.utils.configs import threads, url_scheme
 
 
 class _cli:

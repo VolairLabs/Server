@@ -1,8 +1,8 @@
 # API Informations
-from volair_on_prem.api.endpoints.utils import (
+from volair_on_PREM.api.endpoints.utils import (
     get_current_directory_name,
 )
-from volair_on_prem.api.app import app
+from volair_on_PREM.api.app import app
 from flask import jsonify, request
 
 url = get_current_directory_name()
@@ -14,7 +14,7 @@ method = "POST"
 #
 
 
-from volair_on_prem.api.utils.ldap.scope_control import add_group_to_scope
+from volair_on_PREM.api.utils.ldap.scope_control import add_group_to_scope
 
 
 def endpoint():

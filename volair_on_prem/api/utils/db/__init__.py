@@ -4,9 +4,9 @@ from .redis import *
 import traceback
 
 
-from volair_on_prem.api.utils.configs import redis_password, redis_host, redis_port
-from volair_on_prem.api.utils.logs import *
-from volair_on_prem.api.tracer import tracer
+from volair_on_PREM.api.utils.configs import redis_password, redis_host, redis_port
+from volair_on_PREM.api.utils.logs import *
+from volair_on_PREM.api.tracer import tracer
 from opentelemetry.trace import Status, StatusCode
 import threading
 

@@ -7,15 +7,15 @@ import requests
 from flask import jsonify
 from flask import request
 
-from volair_on_prem.api import app
-from volair_on_prem.api.urls import *
-from volair_on_prem.api.utils import AccessKey
-from volair_on_prem.api.utils import AI
-from volair_on_prem.api.utils import Scope
-from volair_on_prem.api.utils import storage_4
-from volair_on_prem.api.utils.kot_db import kot_db
-from volair_on_prem.api.utils.credential_detection.main import detect_credentials
-from volair_on_prem.api.utils.github_sync import github
+from volair_on_PREM.api import app
+from volair_on_PREM.api.urls import *
+from volair_on_PREM.api.utils import AccessKey
+from volair_on_PREM.api.utils import AI
+from volair_on_PREM.api.utils import Scope
+from volair_on_PREM.api.utils import storage_4
+from volair_on_PREM.api.utils.kot_db import kot_db
+from volair_on_PREM.api.utils.credential_detection.main import detect_credentials
+from volair_on_PREM.api.utils.github_sync import github
 
 
 def forward_request_to_openai_ollama(path, method, headers, data):

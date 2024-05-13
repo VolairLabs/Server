@@ -1,4 +1,4 @@
-from volair_on_prem.api.utils.kot_db import kot_db
+from volair_on_PREM.api.utils.kot_db import kot_db
 
 
 def save_conf(conf):

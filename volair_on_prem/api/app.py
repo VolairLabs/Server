@@ -3,7 +3,7 @@ from flask import Flask
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from volair_on_prem.api.utils.configs import *
+from volair_on_PREM.api.utils.configs import *
 
 if sentry:
     import sentry_sdk

@@ -1,4 +1,4 @@
-from volair_on_prem.api.utils.configs import *
+from volair_on_PREM.api.utils.configs import *
 
 
 from opentelemetry.sdk.resources import Resource

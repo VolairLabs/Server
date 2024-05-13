@@ -1,10 +1,10 @@
 from flask import jsonify
 from flask import request
 
-from volair_on_prem.api import app
-from volair_on_prem.api.urls import *
-from volair_on_prem.api.utils import AccessKey, storage, Scope, AI
-from volair_on_prem.api.utils.ai.ai_history import get_all_ai_calls, reset_ai_calls
+from volair_on_PREM.api import app
+from volair_on_PREM.api.urls import *
+from volair_on_PREM.api.utils import AccessKey, storage, Scope, AI
+from volair_on_PREM.api.utils.ai.ai_history import get_all_ai_calls, reset_ai_calls
 
 
 @app.route(get_all_ai_calls_url, methods=["GET"])

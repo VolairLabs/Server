@@ -18,14 +18,14 @@ from langchain_community.embeddings import OllamaEmbeddings
 from langchain_openai import OpenAIEmbeddings, AzureOpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 
-from volair_on_prem.api.utils import storage
-from volair_on_prem.api.utils.ai.ai_history import active_ai_history, save_ai_call
-from volair_on_prem.api.tracer import tracer, provider
+from volair_on_PREM.api.utils import storage
+from volair_on_PREM.api.utils.ai.ai_history import active_ai_history, save_ai_call
+from volair_on_PREM.api.tracer import tracer, provider
 from opentelemetry.trace import Status, StatusCode
 
-from volair_on_prem.api.utils import debug, info, failed
+from volair_on_PREM.api.utils import debug, info, failed
 
-from volair_on_prem.api.utils.kot_db import kot_db
+from volair_on_PREM.api.utils.kot_db import kot_db
 
 import traceback
 from openai import OpenAI, AzureOpenAI

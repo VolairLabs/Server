@@ -8,7 +8,7 @@ import re
 
 
 def write_version(version):
-    with open("volair_on_prem/__init__.py", "r+") as file:
+    with open("volair_on_PREM/__init__.py", "r+") as file:
         content = file.read()
         content = re.sub(r"__version__ = '.*'", f"__version__ = '{version}'", content)  # fmt: skip
         file.seek(0)

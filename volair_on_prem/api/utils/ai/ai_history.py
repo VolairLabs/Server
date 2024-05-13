@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 import time
 
-from volair_on_prem.api.utils import storage_ai_history
-from volair_on_prem.api.utils.hashing import string_to_sha256
+from volair_on_PREM.api.utils import storage_ai_history
+from volair_on_PREM.api.utils.hashing import string_to_sha256
 
 
 load_dotenv(dotenv_path=".env")

@@ -12,11 +12,11 @@ from waitress.server import create_server
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 
-from volair_on_prem.api import app
-from volair_on_prem.api.urls import *
+from volair_on_PREM.api import app
+from volair_on_PREM.api.urls import *
 
-from volair_on_prem.api.utils import AccessKey
-from volair_on_prem.api.utils import storage, storage_2, Scope, storage_3
+from volair_on_PREM.api.utils import AccessKey
+from volair_on_PREM.api.utils import storage, storage_2, Scope, storage_3
 import time
 
 

@@ -26,7 +26,7 @@ COPY Server/the.conf /etc/nginx/conf.d/the.conf
 
 COPY Server/run.sh /
 
-COPY models Server/volair_on_prem/api/utils/ai/
+COPY models Server/volair_on_PREM/api/utils/ai/
 
 WORKDIR /app/Server
 

@@ -1,14 +1,14 @@
-from volair_on_prem.api import app
+from volair_on_PREM.api import app
 from flask import request, Response
 
-from volair_on_prem.api.utils import AccessKey
+from volair_on_PREM.api.utils import AccessKey
 
-from volair_on_prem.api.urls import *
+from volair_on_PREM.api.urls import *
 
-from volair_on_prem.api.pre_process.admin import *
+from volair_on_PREM.api.pre_process.admin import *
 
-from volair_on_prem.api.pre_process.user import *
-from volair_on_prem.api.utils.logs import warning
+from volair_on_PREM.api.pre_process.user import *
+from volair_on_PREM.api.utils.logs import warning
 
 
 @app.before_request

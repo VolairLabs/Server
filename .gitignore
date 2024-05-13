@@ -5,7 +5,7 @@ KOT-*/
 
 test.ipynb
 
-volair_on_prem/dash/staticfiles/*
+volair_on_PREM/dash/staticfiles/*
 
 Volair-*/
 volair_cache/

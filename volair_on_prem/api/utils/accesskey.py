@@ -2,16 +2,16 @@ import time
 
 import random
 
-from volair_on_prem.api.utils import storage
+from volair_on_PREM.api.utils import storage
 
-from volair_on_prem.api.utils.configs import admin_key
+from volair_on_PREM.api.utils.configs import admin_key
 
-from volair_on_prem.api.utils.kot_db import kot_db
+from volair_on_PREM.api.utils.kot_db import kot_db
 
-from volair_on_prem.api.utils.caching import cache_response
+from volair_on_PREM.api.utils.caching import cache_response
 
-from volair_on_prem.api.utils.ldap.scope_control import get_all_groups, get_all_scopes, get_groups_in_scope
-from volair_on_prem.api.utils.ldap.ldap import is_user_in_group
+from volair_on_PREM.api.utils.ldap.scope_control import get_all_groups, get_all_scopes, get_groups_in_scope
+from volair_on_PREM.api.utils.ldap.ldap import is_user_in_group
 
 class AccessKey:
     def __init__(self, key):

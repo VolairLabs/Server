@@ -4,7 +4,7 @@ import sys
 from ldap3 import Server, Connection, ALL
 
 try:
-    from volair_on_prem.api.utils.kot_db import kot_db
+    from volair_on_PREM.api.utils.kot_db import kot_db
 except:
     sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
     from kot_db import kot_db

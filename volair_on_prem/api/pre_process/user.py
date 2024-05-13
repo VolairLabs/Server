@@ -1,5 +1,5 @@
-from volair_on_prem.api.utils import access_key
-from volair_on_prem.api.urls import *
+from volair_on_PREM.api.utils import access_key
+from volair_on_PREM.api.urls import *
 
 
 def free_operation(scope):

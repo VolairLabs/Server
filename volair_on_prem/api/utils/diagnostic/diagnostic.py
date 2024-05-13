@@ -1,9 +1,9 @@
 import time
 
-from volair_on_prem.__init__ import __version__
-from volair_on_prem.api.utils import storage
-from volair_on_prem.api.utils.accesskey import AccessKey
-from volair_on_prem.api.utils.scope import Scope
+from volair_on_PREM.__init__ import __version__
+from volair_on_PREM.api.utils import storage
+from volair_on_PREM.api.utils.accesskey import AccessKey
+from volair_on_PREM.api.utils.scope import Scope
 
 start_time = time.time()
 

@@ -3,13 +3,13 @@ import time
 import random
 import traceback
 import difflib
-from volair_on_prem.api.utils import storage_2, AI, storage_3, AccessKey, storage_5
+from volair_on_PREM.api.utils import storage_2, AI, storage_3, AccessKey, storage_5
 
 
-from volair_on_prem.api.tracer import tracer
+from volair_on_PREM.api.tracer import tracer
 from opentelemetry.trace import Status, StatusCode
 
-from volair_on_prem.api.utils.github_sync import github
+from volair_on_PREM.api.utils.github_sync import github
 
 
 import cloudpickle
@@ -817,7 +817,7 @@ class Scope:
                     }
                     self.the_storage.set(self.key, temp_data)
 
-                    from volair_on_prem.api.operations.user import (
+                    from volair_on_PREM.api.operations.user import (
                         create_commit_message_of_scope_,
                         create_document_of_scope_,
                         create_time_complexity_of_scope_,

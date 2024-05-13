@@ -3,8 +3,8 @@ import random
 
 import redis
 
-from volair_on_prem.api.utils.configs import redis_host, redis_port, redis_password
-from volair_on_prem.api.utils.db.serialization import *
+from volair_on_PREM.api.utils.configs import redis_host, redis_port, redis_password
+from volair_on_PREM.api.utils.db.serialization import *
 
 
 class redis_client_:

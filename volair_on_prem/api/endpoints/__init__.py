@@ -18,7 +18,7 @@ for subdir in os.listdir(pages_dir):
         page_file = os.path.join(subdir_path, "endpoint.py")
         if os.path.isfile(page_file):
             # Import the page.py file
-            module_name = f"volair_on_prem.api.endpoints.{subdir}.endpoint"
+            module_name = f"volair_on_PREM.api.endpoints.{subdir}.endpoint"
             spec = importlib.util.spec_from_file_location(module_name, page_file)
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
